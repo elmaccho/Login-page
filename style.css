@@ -4,23 +4,20 @@
   pointer-events: none;
 }
 
-.separator {
+main .login-container form .separator {
   display: flex;
   align-items: center;
   text-align: center;
 }
-
-.separator::before,
-.separator::after {
+main .login-container form .separator::before,
+main .login-container form .separator::after {
   content: "";
   flex: 1;
   border-bottom: 1px solid #000;
 }
-
-.separator:not(:empty)::before {
+main .login-container form .separator:not(:empty)::before {
   margin-right: 0.25em;
 }
-
-.separator:not(:empty)::after {
+main .login-container form .separator:not(:empty)::after {
   margin-left: 0.25em;
 }/*# sourceMappingURL=style.css.map */
