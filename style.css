@@ -19,13 +19,15 @@ body {
 main {
   width: 100%;
   display: flex;
+  transition: 0.3s;
 }
 main .main-container {
   width: 63%;
+  transition: 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   position: absolute;
   left: 0;
   top: 0;
