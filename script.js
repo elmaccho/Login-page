@@ -2,6 +2,9 @@
 
 const signupBtn = document.querySelector('.signupBtn')
 const loginBtn = document.querySelector('.loginBtn')
+const signupBtnMobile = document.querySelector('.signupBtnMobile')
+const loginBtnMobile = document.querySelector('.loginBtnMobile')
+
 
 const loginContainer = document.querySelector('.login-container')
 const loginBtnContainer = document.querySelector('.loginBtnContainer')
@@ -48,6 +51,22 @@ const switchToLogin = () => {
     loginBtnContainer.classList.toggle('hidden')
 }
 
+const switchToRegisterMobile = () => {
+    registerBtnContainer.classList.toggle('hidden')
+    loginContainer.classList.toggle('hidden')
+
+    registerContainer.classList.toggle('hidden')
+    loginBtnContainer.classList.toggle('hidden')
+}
+
+const switchToLoginMobile = () => {
+    registerBtnContainer.classList.toggle('hidden')
+    loginContainer.classList.toggle('hidden')
+
+    registerContainer.classList.toggle('hidden')
+    loginBtnContainer.classList.toggle('hidden')
+}
+
 const showPassword = (e) => {
     if(e.target.closest('form').querySelector('.passInput').type == "password"){
         e.target.closest('form').querySelector('.passInput').type = "text"
@@ -57,37 +76,66 @@ const showPassword = (e) => {
 }
 
 const passStrength = () => {
-    let bigLetter = /^(?=.*[A-Z]).{8,}$/;
-    let twoNumberBigLetter = /^(?=.*[A-Z])(?=.*\d.*\d).{8,}$/;
-    let perfectoPassword = /^(?=.*[A-Z])(?=.*\d.*\d)(?=.*[!@#$%^&*()_+])[a-zA-Z0-9!@#$%^&*()_+]{8,}$/;
+    let veryWeakPassword = /^([a-z]{1,8})$/
+    let stillWeakPassword = /^(?=.*[A-Z])(?=.*[a-z]{8,})[a-zA-Z]+$/
+    let goodPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
+    let perfectoPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#$%^&*()_+]).{8,}$/
+
+
+    // let specialCharacter =/^(?=.*[\W_]).{8,}$/
+    // let bigLetter = /^(?=.*[A-Z]).{8,}$/
+    // let oneNumber = /^(?=.*\d).{8,}$/
+    // let eightCharacters = /^[a-zA-Z]{8,}$/
+
     const passValue = passInputStr.value;
-  
+
+    bar.style.opacity = "100%";
+
     if (passValue.length == 0) {
-      barProgress.style.width = "0%";
-      barProgress.style.backgroundColor = "unset";
-      passStrInfo.textContent = "";
-    } else if (passValue.match(perfectoPassword) && passValue.length > 8) {
-      barProgress.style.width = "100%";
-      barProgress.style.backgroundColor = "green";
-      passStrInfo.textContent = "Great! 👍😎👍";
-    } else if (passValue.match(twoNumberBigLetter)) {
-      barProgress.style.width = "50%";
-      barProgress.style.backgroundColor = "yellow";
-      passStrInfo.textContent = "Good 😌";
-    } else if (passValue.match(bigLetter)) {
-      barProgress.style.width = "25%";
-      barProgress.style.backgroundColor = "red";
-      passStrInfo.textContent = "Still weak 😒";
-    } else if (passValue.length > 0 && passValue.length < 8) {
-      barProgress.style.width = "7.5%";
-      barProgress.style.backgroundColor = "grey";
-      passStrInfo.textContent = "Very weak 😢";
-    }
-  };
+        barProgress.style.width = "0%";
+        barProgress.style.backgroundColor = "unset";
+        bar.style.opacity = "0%";
+        passStrInfo.textContent = 'Waiting for password 🧐'
+      } else if (passValue.match(perfectoPassword)) {
+        barProgress.style.width = "100%";
+        barProgress.style.backgroundColor = "green";
+        passStrInfo.textContent = "Great! 👍😎👍";
+      } else if (passValue.match(goodPassword)) {
+        barProgress.style.width = "50%";
+        barProgress.style.backgroundColor = "yellow";
+        passStrInfo.textContent = "Good 😌";
+      } else if (passValue.match(stillWeakPassword) || passValue.match(stillWeakPassword) && passValue.match(veryWeakPassword)) {
+        barProgress.style.width = "25%";
+        barProgress.style.backgroundColor = "red";
+        passStrInfo.textContent = "Still weak 😒";
+      } else if (passValue.match(veryWeakPassword)) {
+        barProgress.style.width = "7.5%";
+        barProgress.style.backgroundColor = "grey";
+        passStrInfo.textContent = "Very weak 😢";
+      } else if (passValue != 0){
+        barProgress.style.width = "7.5%";
+        barProgress.style.backgroundColor = "grey";
+        passStrInfo.textContent = "Very weak 😢";
+      }
+
+};
 
 signupBtn.addEventListener('click', switchToRegister)
 loginBtn.addEventListener('click', switchToLogin)
+signupBtnMobile.addEventListener('click', switchToRegisterMobile)
+loginBtnMobile.addEventListener('click', switchToLoginMobile)
+
+
 for(let togglePassBtn of togglePassBtns){
     togglePassBtn.addEventListener('click', showPassword)
 }
 passInputStr.addEventListener('input', passStrength)
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768 && registerBtnContainer.classList.contains('hidden')) {
+        mainContainer.style.transform = "translateX(59%)"
+        btnContainer.style.transform = "translateX(-171%)"
+    } else {
+        mainContainer.style.transform = "translateX(0%)"
+        btnContainer.style.transform = "translateX(0%)"
+    }
+});

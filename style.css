@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -271,8 +275,11 @@ main .main-container .register-container form span .passwordStrength {
 main .main-container .register-container form span .passwordStrength .passStrInfo {
   position: absolute;
   left: 16px;
+  width: max-content;
 }
 main .main-container .register-container form span .passwordStrength .bar {
+  transition: 0.3s;
+  opacity: 0%;
   background-color: #edf5f3;
   border-radius: 15px;
   width: 70%;
@@ -351,6 +358,24 @@ main .btn-container .registerBtnContainer .signupBtn {
   box-shadow: rgba(96, 96, 96, 0.63) -4px 4px 29px 0px;
   cursor: pointer;
 }
+main .btn-container .registerBtnContainer a {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+}
+main .btn-container .registerBtnContainer a .signupBtnMobile {
+  height: 45px;
+  transition: 0.3s;
+  width: 50%;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: rgba(96, 96, 96, 0.63) -4px 4px 29px 0px;
+  cursor: pointer;
+  display: none;
+}
 main .btn-container .loginBtnContainer {
   position: absolute;
   transition: 0.3s;
@@ -377,8 +402,29 @@ main .btn-container .loginBtnContainer .loginBtn {
   cursor: pointer;
   transition: 0.3s;
 }
+main .btn-container .loginBtnContainer a {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+}
+main .btn-container .loginBtnContainer a .loginBtnMobile {
+  height: 45px;
+  width: 50%;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: rgba(96, 96, 96, 0.63) -4px 4px 29px 0px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: none;
+}
 
 @media screen and (min-width: 769px) and (max-width: 1023px) {
+  main .main-container .register-container form span .passwordStrength .bar {
+    width: 55%;
+  }
   main .btn-container .registerBtnContainer span {
     font-size: 2.3vw;
   }
@@ -405,6 +451,18 @@ main .btn-container .loginBtnContainer .loginBtn {
   main .btn-container {
     position: unset;
     width: 100%;
+  }
+  main .btn-container .registerBtnContainer .signupBtn {
+    display: none;
+  }
+  main .btn-container .registerBtnContainer a .signupBtnMobile {
+    display: block;
+  }
+  main .btn-container .loginBtnContainer .loginBtn {
+    display: none;
+  }
+  main .btn-container .loginBtnContainer a .loginBtnMobile {
+    display: block;
   }
 }
 @media screen and (max-width: 480px) {
@@ -452,5 +510,17 @@ main .btn-container .loginBtnContainer .loginBtn {
   main .btn-container {
     position: unset;
     width: 100%;
+  }
+  main .btn-container .registerBtnContainer .signupBtn {
+    display: none;
+  }
+  main .btn-container .registerBtnContainer a .signupBtnMobile {
+    display: block;
+  }
+  main .btn-container .loginBtnContainer .loginBtn {
+    display: none;
+  }
+  main .btn-container .loginBtnContainer a .loginBtnMobile {
+    display: block;
   }
 }/*# sourceMappingURL=style.css.map */

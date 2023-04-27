@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-
-    <main>
+    <main id="top">
 
         <div class="main-container">
             <div class="login-container">
@@ -49,7 +47,7 @@
                     <span class="test">
                         <button type="button" class="togglePassBtn"><i class="fa-solid fa-eye"></i></button><input class="passInput passInputStr" type="password" name="" id="" placeholder="Password">
                         <div class="passwordStrength">
-                            <span class="passStrInfo"></span>
+                            <span class="passStrInfo">Waiting for password 🧐</span>
                             <div class="bar">
                                 <div class="barProgress"></div>
                             </div>
@@ -67,11 +65,13 @@
                     Sign up and discover a great <br> amount of new opportunities!
                 </span>
                 <button class="signupBtn">Sign up</button>
+                <a href="#top"><button class="signupBtnMobile">Sign up</button></a>
             </div>
 
             <div class="loginBtnContainer hidden">
                 <h1>Already have account?</h1>
                 <button class="loginBtn">Log in</button>
+                <a href="#top"><button class="loginBtnMobile">Log in</button></a>
             </div>
 
         </div>

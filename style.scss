@@ -3,6 +3,10 @@
 $main: #27b397;
 $main2: #edf5f3;
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     display: flex;
     justify-content: center;
@@ -11,6 +15,7 @@ body{
     margin:0;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
+
 }
 
 .hidden{
@@ -290,7 +295,6 @@ main{
                     .togglePassBtn:hover{
                         opacity: 60%;
                     }
-
                     .passwordStrength{
                         position: relative;
                         width: 100%;
@@ -302,9 +306,12 @@ main{
                         .passStrInfo{
                             position: absolute;
                             left: 16px;
+                            width: max-content;
                         }
 
                         .bar{
+                            transition: 0.3s;
+                            opacity: 0%;
                             background-color: $main2;
                             border-radius: 15px;
                             width: 70%;
@@ -315,7 +322,6 @@ main{
 
                             .barProgress{
                                 transition: 0.3s;
-                                // background-color: rgb(0, 205, 0);
                                 width: 0%;
                                 height: 10px;
                             }
@@ -402,6 +408,25 @@ main{
                 box-shadow: rgba(96, 96, 96, 0.63) -4px 4px 29px 0px;
                 cursor: pointer;
             }
+            a{
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                text-decoration: none;
+                .signupBtnMobile{
+                    height: 45px;
+                    transition: 0.3s;
+                    width: 50%;
+                    border-radius: 50px;
+                    border:none;
+                    font-weight: 600;
+                    font-size: 15px;
+                    box-shadow: rgba(96, 96, 96, 0.63) -4px 4px 29px 0px;
+                    cursor: pointer;
+                    display: none;
+                }
+            }
+
         }
 
         .loginBtnContainer{
@@ -430,13 +455,44 @@ main{
                 box-shadow: rgba(96, 96, 96, 0.63) -4px 4px 29px 0px;
                 cursor: pointer;
                 transition: 0.3s;
+            }        
+            a{
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                text-decoration: none;    
+            .loginBtnMobile{
+                height: 45px;
+                width: 50%;
+                border-radius: 50px;
+                border:none;
+                font-weight: 600;
+                font-size: 15px;
+                box-shadow: rgba(96, 96, 96, 0.63) -4px 4px 29px 0px;
+                cursor: pointer;
+                transition: 0.3s;
+                display: none;
             }
+        }
         }
     }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1023px) {
     main{
+        .main-container{
+            .register-container{
+                form{
+                    span{
+                        .passwordStrength{
+                            .bar{
+                                width: 55%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         .btn-container{
 
@@ -471,11 +527,31 @@ main{
             }
         }
 
-
-
         .btn-container{
             position: unset;
             width: 100%;
+
+            .registerBtnContainer{
+                .signupBtn{
+                    display: none;
+                }
+                a{
+                    .signupBtnMobile{
+                        display: block;
+                    }
+                }
+            }
+
+            .loginBtnContainer{
+                .loginBtn{
+                    display: none;
+                }
+                a{
+                    .loginBtnMobile{
+                        display: block;
+                    }
+                }
+            }
         }
     }
 }
@@ -534,6 +610,27 @@ main{
         .btn-container{
             position: unset;
             width: 100%;
+            .registerBtnContainer{
+                .signupBtn{
+                    display: none;
+                }
+                a{
+                    .signupBtnMobile{
+                        display: block;
+                    }
+                }
+            }
+
+            .loginBtnContainer{
+                .loginBtn{
+                    display: none;
+                }
+                a{
+                    .loginBtnMobile{
+                        display: block;
+                    }
+                }
+            }
         }
     }
 }
