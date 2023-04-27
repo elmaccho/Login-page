@@ -86,12 +86,6 @@ const passStrength = () => {
     let goodPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
     let perfectoPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#$%^&*()_+]).{8,}$/
 
-
-    // let specialCharacter =/^(?=.*[\W_]).{8,}$/
-    // let bigLetter = /^(?=.*[A-Z]).{8,}$/
-    // let oneNumber = /^(?=.*\d).{8,}$/
-    // let eightCharacters = /^[a-zA-Z]{8,}$/
-
     const passValue = passInputStr.value;
 
     bar.style.opacity = "100%";
@@ -109,7 +103,7 @@ const passStrength = () => {
         barProgress.style.width = "50%";
         barProgress.style.backgroundColor = "yellow";
         passStrInfo.textContent = "Good 😌";
-      } else if (passValue.match(stillWeakPassword) || passValue.match(stillWeakPassword) && passValue.match(veryWeakPassword)) {
+      } else if (passValue.match(stillWeakPassword)) {
         barProgress.style.width = "25%";
         barProgress.style.backgroundColor = "red";
         passStrInfo.textContent = "Still weak 😒";
@@ -123,7 +117,7 @@ const passStrength = () => {
         passStrInfo.textContent = "Very weak 😢";
       }
 
-};
+}
 
 const loginButtonValidation = () => {
     let emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
