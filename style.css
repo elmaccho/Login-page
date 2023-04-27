@@ -249,7 +249,7 @@ main .main-container .register-container form span {
 main .main-container .register-container form span .togglePassBtn {
   position: absolute;
   right: 3px;
-  top: 25%;
+  top: 15%;
   font-size: 20px;
   background-color: transparent;
   border: none;
@@ -259,6 +259,32 @@ main .main-container .register-container form span .togglePassBtn {
 }
 main .main-container .register-container form span .togglePassBtn:hover {
   opacity: 60%;
+}
+main .main-container .register-container form span .passwordStrength {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+}
+main .main-container .register-container form span .passwordStrength .passStrInfo {
+  position: absolute;
+  left: 16px;
+}
+main .main-container .register-container form span .passwordStrength .bar {
+  background-color: #edf5f3;
+  border-radius: 15px;
+  width: 70%;
+  height: 10px;
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+}
+main .main-container .register-container form span .passwordStrength .bar .barProgress {
+  transition: 0.3s;
+  width: 0%;
+  height: 10px;
 }
 main .main-container .register-container form .separator {
   display: flex;
