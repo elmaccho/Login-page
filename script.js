@@ -1,3 +1,5 @@
+// switches
+
 const signupBtn = document.querySelector('.signupBtn')
 const loginBtn = document.querySelector('.loginBtn')
 
@@ -9,6 +11,17 @@ const registerBtnContainer = document.querySelector('.registerBtnContainer')
 
 const mainContainer = document.querySelector('.main-container')
 const btnContainer = document.querySelector('.btn-container')
+
+// Show password
+
+const togglePassBtns = document.querySelectorAll('.togglePassBtn')
+const test = document.querySelector('.test')
+const passTest = document.querySelector('.passInput')
+
+// Password strenght
+
+const passwordStrenght = document.querySelector('.passwordStrenght')
+const passInputStr = document.querySelector('.passInputStr')
 
 
 const switchToRegister = () => {
@@ -33,5 +46,16 @@ const switchToLogin = () => {
     loginBtnContainer.classList.toggle('hidden')
 }
 
+const showPassword = (e) => {
+    if(e.target.closest('form').querySelector('.passInput').type == "password"){
+        e.target.closest('form').querySelector('.passInput').type = "text"
+    } else {
+        e.target.closest('form').querySelector('.passInput').type = "password"
+    }
+}
+
 signupBtn.addEventListener('click', switchToRegister)
 loginBtn.addEventListener('click', switchToLogin)
+for(let togglePassBtn of togglePassBtns){
+    togglePassBtn.addEventListener('click', showPassword)
+}
