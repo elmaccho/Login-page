@@ -123,6 +123,9 @@ main .main-container .login-container form input[type=submit] {
 main .main-container .login-container form input[type=submit]:hover {
   opacity: 75%;
 }
+main .main-container .login-container form input[type=submit]:disabled {
+  opacity: 75%;
+}
 main .main-container .login-container form .togglePassBtn {
   position: absolute;
   right: 3px;
@@ -448,6 +451,21 @@ main .btn-container .loginBtnContainer a .loginBtnMobile {
   main .main-container .register-container {
     width: 100%;
   }
+  main .main-container .register-container form span {
+    position: relative;
+    width: 100%;
+  }
+  main .main-container .register-container form span .passwordStrength {
+    position: relative;
+    flex-direction: column;
+    height: 32px;
+  }
+  main .main-container .register-container form span .passwordStrength .passStrInfo {
+    position: relative;
+  }
+  main .main-container .register-container form span .passwordStrength .bar {
+    position: relative;
+  }
   main .btn-container {
     position: unset;
     width: 100%;
@@ -506,6 +524,21 @@ main .btn-container .loginBtnContainer a .loginBtnMobile {
   }
   main .main-container .register-container {
     width: 100%;
+  }
+  main .main-container .register-container form span {
+    position: relative;
+    width: 100%;
+  }
+  main .main-container .register-container form span .passwordStrength {
+    position: relative;
+    flex-direction: column;
+    height: 32px;
+  }
+  main .main-container .register-container form span .passwordStrength .passStrInfo {
+    position: relative;
+  }
+  main .main-container .register-container form span .passwordStrength .bar {
+    position: relative;
   }
   main .btn-container {
     position: unset;

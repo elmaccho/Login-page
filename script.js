@@ -28,6 +28,11 @@ const passStrInfo = document.querySelector('.passStrInfo')
 const bar = document.querySelector('.bar')
 const barProgress = document.querySelector('.barProgress')
 
+// button disable check
+const loginEmail = document.querySelector('.loginEmail')
+const loginPassword = document.querySelector('.loginPassword')
+const loginButton = document.querySelector('.loginButton')
+
 
 const switchToRegister = () => {
     mainContainer.style.transform = "translateX(59%)"
@@ -120,6 +125,14 @@ const passStrength = () => {
 
 };
 
+const loginButtonValidation = () => {
+    let emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
+    if(loginEmail.value.length != 0 && loginEmail.value.match(emailPattern) && loginPassword.value.length >=8){
+        loginButton.disabled = false
+        console.log('validate off');
+    }
+}
+
 signupBtn.addEventListener('click', switchToRegister)
 loginBtn.addEventListener('click', switchToLogin)
 signupBtnMobile.addEventListener('click', switchToRegisterMobile)
@@ -139,3 +152,5 @@ window.addEventListener('resize', function() {
         btnContainer.style.transform = "translateX(0%)"
     }
 });
+loginEmail.addEventListener('input', loginButtonValidation)
+loginPassword.addEventListener('input', loginButtonValidation)

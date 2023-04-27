@@ -134,6 +134,9 @@ main{
                 input[type="submit"]:hover{
                     opacity: 75%;
                 }
+                input[type="submit"]:disabled{
+                    opacity: 75%;
+                }
     
                 .togglePassBtn{
                     position: absolute;
@@ -524,6 +527,33 @@ main{
     
             .register-container{
                 width: 100%;
+
+                form{
+                    span{
+                        position: relative;
+                        width: 100%;
+    
+                        .passwordStrength{
+                            position: relative;
+                            flex-direction: column;
+                            height: 32px;
+    
+                            .passStrInfo{
+                                position: relative;
+                            }
+    
+                            .bar{
+                                position: relative;
+    
+                                .barProgress{
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+
             }
         }
 
@@ -602,6 +632,31 @@ main{
     
             .register-container{
                 width: 100%;
+
+                form{
+                    span{
+                        position: relative;
+                        width: 100%;
+    
+                        .passwordStrength{
+                            position: relative;
+                            flex-direction: column;
+                            height: 32px;
+    
+                            .passStrInfo{
+                                position: relative;
+                            }
+    
+                            .bar{
+                                position: relative;
+    
+                                .barProgress{
+
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 
