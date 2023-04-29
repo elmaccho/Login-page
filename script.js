@@ -33,6 +33,12 @@ const loginEmail = document.querySelector('.loginEmail')
 const loginPassword = document.querySelector('.loginPassword')
 const loginButton = document.querySelector('.loginButton')
 
+const registerEmail = document.querySelector('.registerEmail')
+const registerName = document.querySelector('.registerName')
+const registerPassword = document.querySelector('.registerPassword')
+const registerButton = document.querySelector('.registerButton')
+
+
 
 const switchToRegister = () => {
     mainContainer.style.transform = "translateX(59%)"
@@ -120,9 +126,21 @@ const passStrength = () => {
 }
 
 const loginButtonValidation = () => {
+    console.log('ee');
     let emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
     if(loginEmail.value.length != 0 && loginEmail.value.match(emailPattern) && loginPassword.value.length >=8){
         loginButton.disabled = false
+        console.log('validate off');
+    } else {
+        loginButton.disabled = true
+        console.log('validate on');
+    }
+}
+
+const registerButtonValidation = () => {
+    let emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
+    if(registerName.value.length > 2 && registerEmail.value.match(emailPattern) && registerPassword.value.length >=8){
+        registerButton.disabled = false
         console.log('validate off');
     }
 }
@@ -148,3 +166,6 @@ window.addEventListener('resize', function() {
 });
 loginEmail.addEventListener('input', loginButtonValidation)
 loginPassword.addEventListener('input', loginButtonValidation)
+registerName.addEventListener('input', registerButtonValidation)
+registerEmail.addEventListener('input', registerButtonValidation)
+registerPassword.addEventListener('input', registerButtonValidation)

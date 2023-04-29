@@ -41,11 +41,11 @@
     
                 <form action="">
                     <div class="separator">or</div>
-                    <input type="text" name="" id="" placeholder="Full name">
-                    <input type="email" name="" id="" placeholder="Email">
+                    <input class="registerName" type="text" name="" id="" placeholder="Full name" required>
+                    <input class="registerEmail" type="email" name="" id="" placeholder="Email" required>
 
                     <span class="test">
-                        <button type="button" class="togglePassBtn"><i class="fa-solid fa-eye"></i></button><input class="passInput passInputStr" type="password" name="" id="" placeholder="Password">
+                        <button type="button" class="togglePassBtn"><i class="fa-solid fa-eye"></i></button><input class="passInput passInputStr registerPassword" type="password" name="" id="" placeholder="Password" required>
                         <div class="passwordStrength">
                             <span class="passStrInfo">Waiting for password 🧐</span>
                             <div class="bar">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                     </span>
-                    <input type="submit" value="Sign up">
+                    <input class="registerButton" disabled="true" type="submit" value="Sign up">
                 </form>
             </div>
         </div>
