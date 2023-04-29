@@ -81,8 +81,12 @@ const switchToLoginMobile = () => {
 const showPassword = (e) => {
     if(e.target.closest('form').querySelector('.passInput').type == "password"){
         e.target.closest('form').querySelector('.passInput').type = "text"
+        e.target.closest('.togglePassBtn').querySelector('i').classList.remove('fa-eye')
+        e.target.closest('.togglePassBtn').querySelector('i').classList.add('fa-eye-slash')
     } else {
         e.target.closest('form').querySelector('.passInput').type = "password"
+        e.target.closest('.togglePassBtn').querySelector('i').classList.add('fa-eye')
+        e.target.closest('.togglePassBtn').querySelector('i').classList.remove('fa-eye-slash')
     }
 }
 
@@ -126,14 +130,11 @@ const passStrength = () => {
 }
 
 const loginButtonValidation = () => {
-    console.log('ee');
     let emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
     if(loginEmail.value.length != 0 && loginEmail.value.match(emailPattern) && loginPassword.value.length >=8){
         loginButton.disabled = false
-        console.log('validate off');
     } else {
         loginButton.disabled = true
-        console.log('validate on');
     }
 }
 
@@ -141,7 +142,8 @@ const registerButtonValidation = () => {
     let emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/
     if(registerName.value.length > 2 && registerEmail.value.match(emailPattern) && registerPassword.value.length >=8){
         registerButton.disabled = false
-        console.log('validate off');
+    } else {
+        registerButton.disabled = true
     }
 }
 
