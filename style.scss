@@ -642,6 +642,34 @@ main{
             .register-container{
                 width: 100%;
 
+                .loginTitle{
+                    font-size: 13vw;
+                }
+    
+                .link-container{
+                    width: 80%;
+                    justify-content: space-around;
+    
+                    a{
+                        width: 14vw;
+                        height: 14vw;
+                    }
+    
+                    .fbIcon{
+                        font-size: 7vw;
+                    }
+                    .googleIcon{
+                        font-size: 7vw;
+                    }
+                    .linkedinIcon{
+                        font-size: 7vw;
+                    }
+                }
+    
+                p{
+                    font-size: 6vw;
+                }
+
                 form{
                     span{
                         position: relative;
@@ -664,8 +692,6 @@ main{
                 }
             }
         }
-
-
 
         .btn-container{
             position: unset;

@@ -536,6 +536,29 @@ main .btn-container .loginBtnContainer a .loginBtnMobile {
   main .main-container .register-container {
     width: 100%;
   }
+  main .main-container .register-container .loginTitle {
+    font-size: 13vw;
+  }
+  main .main-container .register-container .link-container {
+    width: 80%;
+    justify-content: space-around;
+  }
+  main .main-container .register-container .link-container a {
+    width: 14vw;
+    height: 14vw;
+  }
+  main .main-container .register-container .link-container .fbIcon {
+    font-size: 7vw;
+  }
+  main .main-container .register-container .link-container .googleIcon {
+    font-size: 7vw;
+  }
+  main .main-container .register-container .link-container .linkedinIcon {
+    font-size: 7vw;
+  }
+  main .main-container .register-container p {
+    font-size: 6vw;
+  }
   main .main-container .register-container form span {
     position: relative;
     width: 100%;
